@@ -1,0 +1,31 @@
+<meta charset="UTF-8">
+
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=wy750QRwzxnowNN60cXTNCSZheMYTaU2zuXbqnwDAjZt-y4JQmIj8GTUn4YO9tBk4QySlCHhV8NBWy_DDCjduT3LTLnD3s0OCWhUtYB9-frQ5lKxOdLkYec1CNZz9t-aciSrvBM_tBlzAwK8YVt67Yb7xWd2kdm85g71qXznB-KZ0hKsxygAeAj6Mi87cNVmN5pWAs-YcVnvLEUAgz9hVLLQcXVl4YhCUvMp-Ljlkca0q_UYEmiHZBaDiF1ngBy7-XATWRagGFre2_nbWtjBrKUuuNCAbH0eC-33ua0L_8pQ0Qn419_IKYC71iI0Ls5OisHZ5XYvqNWTrnbrHYa6fPcnTIbCOelEBTqU2rGzUS0hcY27U4GMWlz-LxanVNbCzVO87O2QQ4iEz50mdakibDG6IAAbuZfqPa7Q4_JmD1fSgPI0SMmsScGxEPsKIJmbxlnjKhwhzJWqtuNkMkv2N9nQBijxDQNfsG6aTv0N4CNGBu-gS3FnWuMPFFL4ZR-RKsBD9eAHn8BXUupYRfkpYBujMh5wvUoUR7c99hBfsN8SycE5p8tKnwviG9Cns-0Sw_pTTRH5CO-Sa5G-wPSiLCV1Pa72eaMPJsjg33ZMvqBLY-DXkMBHzRgZD4qb0MLFcweCRg4bOlReDFpeJuEbcWGcJd-fDaQ30aOU1rl-LRp9SKA1aBeLak4b12rnIwXc-pHP-SimRh30j1pTvG5hjDrphCoeLa231lQRiMA9zS2FKfAe64fyV3DpTpkLC1vbxqXA1u7CpW__HYTFByd7EWtl8C9k4fdTYURtd_FYnrHOvoqeghWv_RYA3zLOJrt5RpHSbrhuOX6tIsr6zrc0dVIfgdh-dSbRi59_9ZOjOo3GuSl80-Pzv3Nc5hCIIEIDXkaZNABneNizBJkpY5m6B1M2KoXQEWsTpymCQ07sgHT7KnHA5_RA3vMsl3cXQ-06mR-jXB8pSeEZGa798R28sKQmhMez0moqTZGzRSxdGvaXe6LXAra9godHjgog2buHy7YqwcOQZCKQuR6it26xEA2A396-ZSk682UI_kTkhaSkYFbLbWo0_f6VNwMVR5sF2IKwonmJYhUQeWFJ0yO1Br0KJ7ThTJThShqEimqwbNVj4hpV-cYD8v9FOYnTE-cAWMLRn8XANciIS89Y05RITyMkBhfkzhH-GNgqIrVUAP9RpCCHK0Jgx6ZtTi4F4ZHzYQxW-eq5eqjlY-slfbdAqAncJGncfCaOWr51jLDkGKQA1hpsscgcpP_iEDBPkB7gtF3DMeX04gdFLChEKpU-z502Ma6jtxij8oo5gGj_H7cTWAZr_h1UniCjVySrFLWxcU_F3QkC8udNsnPj3zaolzDwDCHR1k7B3tdX6Snl5HaYjJ_xQuEEUCMTqxIj8eXvMoogg2KuYq0QvGeOpQC1XdnsYxnC4V_1_03n7jbUEMRLZ-arqx3okT5I-rcqToW79F2BKzwkCMDvdRc-ZGmrp7tJrZc1kd_d-BeSDIvrvyo7pxlnnxYn4Svc2Yq0gG3N8661Zp49IB_WTGWpuM-hwkBdvK45er5gm9oTyStEfx2vqm276HlSctmx0CSeiBWtjM2ZIkiSghY0AEpEZp0pxho2dE-g0GJc3gKetiBcSDYkH7fN8wbgB08E988srKYZhrrtDMKt1RqUOjlUgCHZaQS-zFdExNa8AGxFu5c7uihuFdvljpJ3P9RjD7NVQNZu0zbvJuE45ppGh482u_DnHiUKM1CUJYJY4-4nrZAoJrtynFreAU_LZr03gXgTTgD5qUVSGKQunfM40o3lJvltUDZ_gQpxSJvDyekfsGL53W7yyISGCE6HyUVB74gzxEt4ACmw8zx3j9a5XUO0laZ1ww" charset="UTF-8"></script><div id="itens"> </div>
+<div>Total: <span id="total"></span> </div>
+
+<script>
+ var total = 0; // variável que retorna o total dos produtos que estão na LocalStorage.
+ var i = 0;     // variável que irá percorrer as posições
+ var valor = 0; // variável que irá receber o preço do produto convertido em Float.
+ 
+ for(i=1; i<=99; i++) // verifica até 99 produtos registrados na localStorage
+ {
+	 var prod = localStorage.getItem("produto" + i + ""); // verifica se há recheio nesta posição. 
+	 if(prod != null) 
+	 {	
+		 // exibe os dados da lista dentro da div itens
+		 document.getElementById("itens").innerHTML += localStorage.getItem("qtd" + i) + " x ";
+		 document.getElementById("itens").innerHTML += localStorage.getItem("produto" + i);
+		 document.getElementById("itens").innerHTML += " ";
+		 document.getElementById("itens").innerHTML += "R$: " + localStorage.getItem("valor" + i) + "<hr>";
+		 
+		 // calcula o total dos recheios
+		 valor = parseFloat(localStorage.getItem("valor" + i)); // valor convertido com o parseFloat()
+		 total = (total + valor); // arredonda para 2 casas decimais com o .toFixed(2)
+	 }
+ } 
+ // exibe o total dos recheios
+ document.getElementById("total").innerHTML = total.toFixed(2); 
+</script>
+
+<button type="button" onclick=" localStorage.clear(); location.reload();"> Limpar carrinho </button>
